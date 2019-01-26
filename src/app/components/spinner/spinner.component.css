@@ -1,0 +1,22 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:host {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  border: 1px solid;
+  border-color: blue lightgray lightgray lightgray;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

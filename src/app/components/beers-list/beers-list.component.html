@@ -8,6 +8,8 @@
   </mat-select>
 </mat-form-field>
 
+<app-spinner *ngIf="pending"></app-spinner>
+
 <ul class="list">
   <app-beer-item *ngFor="let beer of beers" [beer]="beer"></app-beer-item>
 </ul>

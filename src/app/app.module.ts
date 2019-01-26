@@ -11,9 +11,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BeersListComponent } from './components/beers-list/beers-list.component';
 import { BeerItemComponent } from './components/beer-item/beer-item.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FullImageComponent } from './components/full-image/full-image.component';
 
 @NgModule({
-  declarations: [AppComponent, BeersListComponent, BeerItemComponent],
+  declarations: [AppComponent, BeersListComponent, BeerItemComponent, SpinnerComponent, FullImageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,6 +30,6 @@ import { BeerItemComponent } from './components/beer-item/beer-item.component';
     }
   ],
   bootstrap: [AppComponent],
-  exports: [BeersListComponent, BeerItemComponent]
+  exports: [BeersListComponent, BeerItemComponent, SpinnerComponent, FullImageComponent]
 })
 export class AppModule {}

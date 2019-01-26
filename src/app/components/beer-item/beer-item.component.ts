@@ -8,4 +8,10 @@ import { Beer } from 'src/app/models/beer.interface';
 })
 export class BeerItemComponent {
   @Input() beer: Beer;
+
+  showFullImage = false;
+
+  onToggleImage() {
+    this.showFullImage = !this.showFullImage;
+  }
 }

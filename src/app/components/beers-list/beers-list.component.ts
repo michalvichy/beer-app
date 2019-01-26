@@ -12,6 +12,7 @@ import { Beer } from 'src/app/models/beer.interface';
 export class BeersListComponent implements OnInit {
   public brewers$: Observable<string[]>;
   public beers: Beer[] = [];
+  public pending = false;
 
   constructor(private brewerService: BrewerService, private beerService: BeersService) {}
 
@@ -20,7 +21,11 @@ export class BeersListComponent implements OnInit {
   }
 
   onChange({ value }) {
+    this.pending = true;
+    this.beers = [];
+
     this.beerService.getBeers(value).subscribe(response => {
+      this.pending = false;
       this.beers = response.sort((a, b) => {
         if (a.name > b.name) {
           return 1;
