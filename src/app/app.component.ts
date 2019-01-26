@@ -7,13 +7,4 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'beer-app';
-  public brewers$: Observable<string[]>;
-
-  constructor(private brewerService: BrewerService) {}
-
-  public ngOnInit() {
-    this.brewers$ = this.brewerService.brewers$;
-  }
-}
+export class AppComponent {}

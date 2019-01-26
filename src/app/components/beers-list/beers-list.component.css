@@ -1,0 +1,10 @@
+:host {
+  flex-basis: 25%;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}

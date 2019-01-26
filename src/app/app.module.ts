@@ -8,16 +8,26 @@ import { API_URL_TOKEN } from './config';
 import { environment } from 'src/environments/environment';
 
 import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { BeersListComponent } from './components/beers-list/beers-list.component';
+import { BeerItemComponent } from './components/beer-item/beer-item.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatSelectModule],
+  declarations: [AppComponent, BeersListComponent, BeerItemComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatGridListModule
+  ],
   providers: [
     {
       provide: API_URL_TOKEN,
       useValue: environment.apiUrl
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [BeersListComponent, BeerItemComponent]
 })
 export class AppModule {}

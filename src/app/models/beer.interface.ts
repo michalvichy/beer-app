@@ -12,4 +12,5 @@ export interface Beer {
   product_id: number;
   size: string;
   style: string;
+  type?: string;
 }

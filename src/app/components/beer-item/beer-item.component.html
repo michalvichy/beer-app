@@ -1,0 +1,7 @@
+<div class="img" style.backgroundImage="url({{ beer.image_url }})"></div>
+
+<div class="body">
+  <h4 class="name">Name: {{ beer.name }}</h4>
+  <p *ngIf="beer.type">Type: {{ beer.type }}</p>
+  <p>Price: {{ beer.price | currency }}</p>
+</div>
