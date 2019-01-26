@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://ontariobeerapi.ca/'
+  apiUrl: 'https://cors-anywhere.herokuapp.com/http://ontariobeerapi.ca/'
 };
