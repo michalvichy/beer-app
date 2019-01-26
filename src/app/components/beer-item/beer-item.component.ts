@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Beer } from 'src/app/models/beer.interface';
 
 @Component({
@@ -9,7 +9,7 @@ import { Beer } from 'src/app/models/beer.interface';
 export class BeerItemComponent {
   @Input() beer: Beer;
 
-  showFullImage = false;
+  public showFullImage = false;
 
   onToggleImage() {
     this.showFullImage = !this.showFullImage;

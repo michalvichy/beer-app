@@ -15,14 +15,14 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FullImageComponent } from './components/full-image/full-image.component';
 
 @NgModule({
-  declarations: [AppComponent, BeersListComponent, BeerItemComponent, SpinnerComponent, FullImageComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatSelectModule,
-    MatGridListModule
+  declarations: [
+    AppComponent,
+    BeersListComponent,
+    BeerItemComponent,
+    SpinnerComponent,
+    FullImageComponent
   ],
+  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatSelectModule],
   providers: [
     {
       provide: API_URL_TOKEN,

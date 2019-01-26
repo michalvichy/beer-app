@@ -21,18 +21,21 @@ export class BrewerService {
   }
 
   private getBrewers() {
-    this.http
+    return this.http
       .get<Beer[]>(`${this.apiUrl}beers`)
       .pipe(
-        tap<Beer[]>(console.log),
         switchMap(beers => beers),
         distinct(beer => beer.brewer),
         toArray(),
         map(beers => beers.map(beer => beer.brewer))
       )
       .subscribe(brewers => {
-        localStorage.setItem('brewers', JSON.stringify(brewers));
+        this.saveBrewers(brewers);
         this._brewers$.next(brewers);
       });
+  }
+
+  public saveBrewers(brewers: string[]) {
+    localStorage.setItem('brewers', JSON.stringify(brewers));
   }
 }
