@@ -1,7 +1,11 @@
 <h4>Choose a brewer</h4>
 
 <mat-form-field>
-  <mat-select placeholder="Choose a brewer" (selectionChange)="onChange($event)">
+  <mat-select
+    placeholder="Choose a brewer"
+    (selectionChange)="onChange($event)"
+    [(value)]="selected"
+  >
     <mat-option *ngFor="let brewer of (brewers$ | async)" [value]="brewer">
       {{ brewer }}
     </mat-option>
