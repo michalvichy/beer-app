@@ -6,7 +6,7 @@ import { DEFAULT_SETTINGS_TOKEN } from '../config';
 
 const fakeSettings: Settings = {
   perPage: 0,
-  theme: 'light'
+  theme: 'light-theme'
 };
 
 describe('SettingsService', () => {

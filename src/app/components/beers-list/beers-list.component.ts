@@ -59,7 +59,6 @@ export class BeersListComponent implements OnInit {
   }
 
   public onChange({ value }: MatSelectChange) {
-    this.pending = true;
     this.allBeers = [];
     this.currentPage = 1;
 
@@ -73,6 +72,8 @@ export class BeersListComponent implements OnInit {
   }
 
   private getBeers(brewer: string) {
+    this.pending = true;
+
     this.beerService.getBeers(brewer).subscribe(response => {
       this.pending = false;
       this.allBeers = response;

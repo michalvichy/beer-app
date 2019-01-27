@@ -14,9 +14,10 @@ import { Beer } from 'src/app/models/beer.interface';
 import { of } from 'rxjs';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material';
 
 const fakeSettings: Settings = {
-  theme: 'light',
+  theme: 'light-theme',
   perPage: 1
 };
 
@@ -65,7 +66,7 @@ describe('BeersListComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [BeersListComponent, BeerItemComponent, SpinnerComponent, FullImageComponent],
-      imports: [BrowserAnimationsModule, HttpClientTestingModule, MatSelectModule],
+      imports: [BrowserAnimationsModule, HttpClientTestingModule, MatSelectModule, MatCardModule],
       providers: [
         SettingsService,
         { provide: BeersService, useValue: beersService },

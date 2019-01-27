@@ -1,5 +1,11 @@
 <div *ngIf="(settings$ | async) as settings">
-  <p>Theme: {{ settings.theme }}</p>
+  <div class="row">
+    <p>Theme</p>
+
+    <mat-select placeholder="Switch theme" (selectionChange)="onChangeTheme($event)">
+      <mat-option *ngFor="let theme of themes" [value]="theme"> {{ theme }} </mat-option>
+    </mat-select>
+  </div>
 
   <div class="row">
     <p>Per page: {{ settings.perPage }}</p>

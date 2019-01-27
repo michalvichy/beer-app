@@ -1,6 +1,6 @@
-<h4>Choose a brewer</h4>
+<h4 color="primary">Choose a brewer</h4>
 
-<mat-form-field>
+<mat-card>
   <mat-select
     placeholder="Choose a brewer"
     (selectionChange)="onChange($event)"
@@ -10,7 +10,7 @@
       {{ brewer }}
     </mat-option>
   </mat-select>
-</mat-form-field>
+</mat-card>
 
 <app-spinner *ngIf="pending"></app-spinner>
 

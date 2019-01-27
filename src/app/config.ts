@@ -6,6 +6,6 @@ export const API_URL_TOKEN = new InjectionToken<string>('apiUrl');
 export const DEFAULT_SETTINGS_TOKEN = new InjectionToken<Settings>('defaultSettings');
 
 export const defaultSettings: Settings = {
-  theme: 'light',
+  theme: 'light-theme',
   perPage: 10
 };

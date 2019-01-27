@@ -1,4 +1,6 @@
+export type Theme = 'light-theme' | 'dark-theme';
+
 export interface Settings {
-  theme: 'light' | 'dark';
+  theme: Theme;
   perPage: number;
 }

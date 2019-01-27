@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatSliderModule } from '@angular/material';
+import { MatSliderModule, MatSelectModule } from '@angular/material';
 import { SettingsDialogComponent } from './settings-dialog.component';
 import { DEFAULT_SETTINGS_TOKEN } from './../../config';
 import { SettingsService } from './../../services/settings.service';
@@ -11,7 +11,7 @@ describe('SettingsDialogComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SettingsDialogComponent],
-      imports: [MatSliderModule],
+      imports: [MatSliderModule, MatSelectModule],
       providers: [SettingsService, { provide: DEFAULT_SETTINGS_TOKEN, useValue: {} }]
     }).compileComponents();
   }));
