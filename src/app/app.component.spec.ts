@@ -5,10 +5,10 @@ import { BeerItemComponent } from './components/beer-item/beer-item.component';
 import { MatSelectModule } from '@angular/material/select';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FullImageComponent } from './components/full-image/full-image.component';
-import { API_URL_TOKEN } from './config';
+import { API_URL_TOKEN, DEFAULT_SETTINGS_TOKEN } from './config';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatSliderModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -20,8 +20,12 @@ describe('AppComponent', () => {
         SpinnerComponent,
         FullImageComponent
       ],
-      imports: [MatSelectModule, HttpClientModule, MatIconModule, MatDialogModule],
-      providers: [HttpClient, { provide: API_URL_TOKEN, useValue: '' }]
+      imports: [MatSelectModule, HttpClientModule, MatIconModule, MatDialogModule, MatSliderModule],
+      providers: [
+        HttpClient,
+        { provide: API_URL_TOKEN, useValue: '' },
+        { provide: DEFAULT_SETTINGS_TOKEN, useValue: {} }
+      ]
     }).compileComponents();
   }));
 
