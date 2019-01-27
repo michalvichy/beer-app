@@ -10,7 +10,7 @@ import { MatSelectChange } from '@angular/material';
 @Component({
   selector: 'app-beers-list',
   templateUrl: './beers-list.component.html',
-  styleUrls: ['./beers-list.component.css']
+  styleUrls: ['./beers-list.component.scss']
 })
 export class BeersListComponent implements OnInit {
   public brewers$: Observable<string[]>;

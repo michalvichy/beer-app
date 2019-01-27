@@ -4,7 +4,7 @@ import { Beer } from 'src/app/models/beer.interface';
 @Component({
   selector: 'app-beer-item',
   templateUrl: './beer-item.component.html',
-  styleUrls: ['./beer-item.component.css'],
+  styleUrls: ['./beer-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BeerItemComponent {

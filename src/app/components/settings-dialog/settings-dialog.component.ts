@@ -5,7 +5,7 @@ import { MatSliderChange } from '@angular/material';
 @Component({
   selector: 'app-settings-dialog',
   templateUrl: './settings-dialog.component.html',
-  styleUrls: ['./settings-dialog.component.css']
+  styleUrls: ['./settings-dialog.component.scss']
 })
 export class SettingsDialogComponent {
   public settings$ = this.settingsService.settings$;

@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) {}
+  @HostBinding('class') class;
+
+  onSetTheme(theme: string) {
+    this.overlayContainer.getContainerElement().classList.add(theme);
+    this.class = theme;
+  }
+
+  constructor(public dialog: MatDialog, public overlayContainer: OverlayContainer) {
+    this.onSetTheme('light-theme');
+  }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SettingsDialogComponent, { width: '400px' });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    this.dialog.open(SettingsDialogComponent, { width: '400px' });
   }
 }

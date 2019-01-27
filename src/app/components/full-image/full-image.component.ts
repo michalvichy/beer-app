@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'app-full-image',
   templateUrl: './full-image.component.html',
-  styleUrls: ['./full-image.component.css'],
+  styleUrls: ['./full-image.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FullImageComponent implements OnInit {
