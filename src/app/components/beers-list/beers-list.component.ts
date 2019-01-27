@@ -32,6 +32,7 @@ export class BeersListComponent implements OnInit {
     this.settings$.add(
       this.settingsService.settings$.subscribe(value => {
         this.settings = value;
+        this.countPages();
       })
     );
   }
@@ -53,10 +54,7 @@ export class BeersListComponent implements OnInit {
   }
 
   get beers(): Beer[] {
-    const foo = this.allBeers.slice(0, this.currentPage * this.settings.perPage);
-    console.log(foo.length);
-
-    return foo;
+    return this.allBeers.slice(0, this.currentPage * this.settings.perPage);
   }
 
   public onChange({ value }) {

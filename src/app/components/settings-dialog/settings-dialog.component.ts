@@ -13,8 +13,7 @@ export class SettingsDialogComponent implements OnInit {
 
   ngOnInit() {}
 
-  changeSetting() {
-    this.i += 1;
-    this.settingsService.updateSettings({ perPage: this.i });
+  onSlide({ value }) {
+    this.settingsService.updateSettings({ perPage: value });
   }
 }

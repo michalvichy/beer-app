@@ -16,7 +16,8 @@ import {
   MatDialogModule,
   MatButtonModule,
   MatSelectModule,
-  MatIconModule
+  MatIconModule,
+  MatSliderModule
 } from '@angular/material';
 
 @NgModule({
@@ -35,7 +36,8 @@ import {
     MatSelectModule,
     MatIconModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSliderModule
   ],
   providers: [
     {

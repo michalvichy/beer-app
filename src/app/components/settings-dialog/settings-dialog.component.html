@@ -1,5 +1,9 @@
 <div *ngIf="(settings$ | async) as settings">
   <p>Theme: {{ settings.theme }}</p>
 
-  <p (click)="changeSetting()">Per page: {{ settings.perPage }}</p>
+  <div class="row">
+    <p>Per page: {{ settings.perPage }}</p>
+
+    <mat-slider min="8" max="15" (change)="onSlide($event)" [value]="settings.perPage"></mat-slider>
+  </div>
 </div>
