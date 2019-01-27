@@ -17,3 +17,7 @@
 <ul class="list">
   <app-beer-item *ngFor="let beer of beers" [beer]="beer"></app-beer-item>
 </ul>
+
+<button mat-button mat-raised-button class="load-more" *ngIf="showLoadMore" (click)="loadMore()">
+  Load more
+</button>

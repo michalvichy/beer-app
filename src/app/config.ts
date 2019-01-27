@@ -7,5 +7,5 @@ export const DEFAULT_SETTINGS_TOKEN = new InjectionToken<Settings>('defaultSetti
 
 export const defaultSettings: Settings = {
   theme: 'light',
-  perPage: 15
+  perPage: 10
 };

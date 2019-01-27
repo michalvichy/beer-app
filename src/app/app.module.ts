@@ -7,14 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { API_URL_TOKEN, DEFAULT_SETTINGS_TOKEN, defaultSettings } from './config';
 import { environment } from 'src/environments/environment';
 
-import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
 import { BeersListComponent } from './components/beers-list/beers-list.component';
 import { BeerItemComponent } from './components/beer-item/beer-item.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FullImageComponent } from './components/full-image/full-image.component';
 import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
-import { MatDialogModule } from '@angular/material';
+import {
+  MatDialogModule,
+  MatButtonModule,
+  MatSelectModule,
+  MatIconModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { MatDialogModule } from '@angular/material';
     HttpClientModule,
     MatSelectModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     {

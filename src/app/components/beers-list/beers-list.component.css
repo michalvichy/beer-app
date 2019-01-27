@@ -5,6 +5,10 @@
 .list {
   list-style-type: none;
   padding: 0;
-  max-height: calc(100vh - 159px);
+  max-height: calc(100vh - 280px);
   overflow: auto;
+}
+
+.load-more {
+  margin-top: 40px;
 }
