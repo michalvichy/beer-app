@@ -8,6 +8,7 @@ import { FullImageComponent } from './components/full-image/full-image.component
 import { API_URL_TOKEN } from './config';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
         SpinnerComponent,
         FullImageComponent
       ],
-      imports: [MatSelectModule, HttpClientModule, MatIconModule],
+      imports: [MatSelectModule, HttpClientModule, MatIconModule, MatDialogModule],
       providers: [HttpClient, { provide: API_URL_TOKEN, useValue: '' }]
     }).compileComponents();
   }));

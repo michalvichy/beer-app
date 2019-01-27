@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SettingsDialogComponent } from './settings-dialog.component';
+import { DEFAULT_SETTINGS_TOKEN } from './../../config';
+import { SettingsService } from './../../services/settings.service';
 
 describe('SettingsDialogComponent', () => {
   let component: SettingsDialogComponent;
@@ -8,9 +10,9 @@ describe('SettingsDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingsDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [SettingsDialogComponent],
+      providers: [SettingsService, { provide: DEFAULT_SETTINGS_TOKEN, useValue: {} }]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
