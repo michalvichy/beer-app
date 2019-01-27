@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SettingsService } from 'src/app/services/settings.service';
 import { MatSliderChange, MatSelectChange } from '@angular/material';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { Theme } from 'src/app/models/settings.interface';
 
 @Component({
@@ -13,10 +12,7 @@ export class SettingsDialogComponent {
   public settings$ = this.settingsService.settings$;
   public themes = ['Light', 'Dark'];
 
-  constructor(
-    private settingsService: SettingsService,
-    private overlayContainer: OverlayContainer
-  ) {}
+  constructor(private settingsService: SettingsService) {}
 
   onSlide({ value }: MatSliderChange) {
     this.settingsService.updateSettings({ perPage: value });

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,8 +19,7 @@ import {
   MatSelectModule,
   MatIconModule,
   MatSliderModule,
-  MatCardModule,
-  MatListModule
+  MatCardModule
 } from '@angular/material';
 
 @NgModule({
