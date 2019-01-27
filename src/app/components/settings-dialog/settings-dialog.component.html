@@ -1,0 +1,5 @@
+<div *ngIf="(settings$ | async) as settings">
+  <p>Theme: {{ settings.theme }}</p>
+
+  <p (click)="changeSetting()">Per page: {{ settings.perPage }}</p>
+</div>

@@ -22,7 +22,7 @@ export class BrewerService {
 
   private getBrewers() {
     return this.http
-      .get<Beer[]>(`${this.apiUrl}beers`)
+      .get<Beer[]>(`${this.apiUrl}/beers`)
       .pipe(
         switchMap(beers => beers),
         distinct(beer => beer.brewer),

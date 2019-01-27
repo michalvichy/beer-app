@@ -45,14 +45,15 @@ describe('BrewerService', () => {
 
     const mockLocalStorage = mockedLocalStorage();
 
-    spyOn(window.localStorage, 'getItem').and.callFake(mockLocalStorage.getItem);
-    spyOn(window.localStorage, 'setItem').and.callFake(mockLocalStorage.setItem);
-    spyOn(window.localStorage, 'clear').and.callFake(mockLocalStorage.clear);
-    spyOn(window.localStorage, 'removeItem').and.callFake(mockLocalStorage.removeItem);
+    spyOn(localStorage, 'getItem').and.callFake(mockLocalStorage.getItem);
+    spyOn(localStorage, 'setItem').and.callFake(mockLocalStorage.setItem);
+    spyOn(localStorage, 'clear').and.callFake(mockLocalStorage.clear);
+    spyOn(localStorage, 'removeItem').and.callFake(mockLocalStorage.removeItem);
   });
 
   afterEach(() => {
     localStorage.clear();
+    service = null;
   });
 
   it('should be created', () => {
@@ -61,7 +62,7 @@ describe('BrewerService', () => {
   });
 
   it('should call API when no saved brewers', () => {
-    const req = http.expectOne('beers');
+    const req = http.expectOne('/beers');
     expect(req.request.method).toEqual('GET');
     req.flush(fakeBeers);
 

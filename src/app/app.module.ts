@@ -4,15 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { API_URL_TOKEN } from './config';
+import { API_URL_TOKEN, DEFAULT_SETTINGS_TOKEN, defaultSettings } from './config';
 import { environment } from 'src/environments/environment';
 
 import { MatSelectModule } from '@angular/material/select';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { BeersListComponent } from './components/beers-list/beers-list.component';
 import { BeerItemComponent } from './components/beer-item/beer-item.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FullImageComponent } from './components/full-image/full-image.component';
+import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,16 +22,35 @@ import { FullImageComponent } from './components/full-image/full-image.component
     BeersListComponent,
     BeerItemComponent,
     SpinnerComponent,
-    FullImageComponent
+    FullImageComponent,
+    SettingsDialogComponent
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, MatSelectModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatIconModule,
+    MatDialogModule
+  ],
   providers: [
     {
       provide: API_URL_TOKEN,
       useValue: environment.apiUrl
+    },
+    {
+      provide: DEFAULT_SETTINGS_TOKEN,
+      useValue: defaultSettings
     }
   ],
   bootstrap: [AppComponent],
-  exports: [BeersListComponent, BeerItemComponent, SpinnerComponent, FullImageComponent]
+  exports: [
+    BeersListComponent,
+    BeerItemComponent,
+    SpinnerComponent,
+    FullImageComponent,
+    SettingsDialogComponent
+  ],
+  entryComponents: [SettingsDialogComponent]
 })
 export class AppModule {}
